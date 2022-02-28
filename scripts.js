@@ -28,18 +28,29 @@ function calculateBMI(weight, height){
     return weight / (height * height);
 }
 
+// get body type and set corresponding image
 function getBodyType(bmi){
     let bodytype = "";
+    let imgSrc = "";
 
     if( bmi <= 18.5 ){
         bodytype = "underweight";
+        imgSrc = "./images/emoji1.png";
+
     }else if( bmi <= 24.9 ){
         bodytype = "normal weight";
+        imgSrc = "./images/emoji2.png";
+
     }else if( bmi <= 29.9 ){
         bodytype = "overweight";
+        imgSrc = "./images/emoji3.png";
+
     }else{
         bodytype = "obese";
+        imgSrc = "./images/emoji4.png";
     }
+
+    $('#bmi_img').attr("src",imgSrc);
     return bodytype;
 }
 
@@ -58,6 +69,7 @@ function isHeightValid(){
     }
     return isValid;
 }
+
 function isWeightValid(){
     let weight = parseInt($('#weight').val());
     let isValid = false;
