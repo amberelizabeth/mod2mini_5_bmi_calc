@@ -19,13 +19,15 @@
         <form class="m-auto">
             <h1>BMI Calculator</h1>
             <div class="form-group">
-                <label for="weight">Weight</label><br>
-                <input type="number" name="weight" id="weight"><label for="weight">kg</label>
+                <label for="weight">Weight (in kg)</label><br>
+                <input type="number" class="bmi-input" name="weight" id="weight" required>
+                <span id="error_weight" class="error-message"></span>
             </div>
 
             <div class="form-group">
-                <label for="height">Height</label><br>
-                <input type="number" name="height" id="height"><label for="height">meters</label>
+                <label for="height">Height (in meters)</label><br>
+                <input type="number" class="bmi-input" name="height" id="height" required>
+                <span id="error_height" class="error-message"></span>
             </div>
 
             <div class="m-2">
@@ -34,10 +36,11 @@
             </div>   
         </form>
 
-        <div id="result-container" class="container">
+        <div id="result-container" class="container text-center text-white">
             <h2>BMI Result</h2>
-            <p id="bmi-under" class="result-text">Your BMI is <span id="bmi" class="bmi-dynamic"></span>, which means you are <span id="body-type" class="bmi-dynamic"></span>. </p>
+            <p class="result-text">Your BMI is <span id="bmi" class="bmi-dynamic"></span>, which means you are <span id="body-type" class="bmi-dynamic"></span>. </p>
         </div>
     </div>  
+    <script src="./scripts.js"></script>
 </body>
 </html>
